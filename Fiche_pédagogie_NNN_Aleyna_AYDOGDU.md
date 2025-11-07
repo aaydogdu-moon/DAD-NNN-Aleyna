@@ -126,7 +126,7 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 
 - Ajout : modification aléatoire autour de la souris, faux "prank" où l'on pense pouvoir effacer les "traces" mais enfaite non.
   
-  ![Capture du bureau](Screenshot%202025-11-07%20at%2011.29.38.png)
+  ![Capture du bureau](SRC/Screenshot%202025-11-07%20at%2011.29.38.png)
 
 - Discussion autour de “empreinte irréversible” / “digital scar”
 
@@ -134,11 +134,11 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 
 - J’ai aussi expérimenté un code où chaque clic modifiait les pixels un par un, transformant précisément l’image au lieu de tracer une ligne continue.
   
-  <img title="" src="file:///Users/aleyna/Desktop/Nouvelles%20Narrations%20Numériques%20-%202025-2026/Screenshot%202025-11-07%20at%2014.00.52.png" alt="Capture du bureau" width="396" data-align="inline"><img title="" src="file:///Users/aleyna/Desktop/Nouvelles%20Narrations%20Numériques%20-%202025-2026/Screenshot%202025-11-07%20at%2014.00.39.png" alt="Capture du bureau" width="223" data-align="inline">
+  <img title="" src="file:///SRC/Screenshot%202025-11-07%20at%2014.00.52.png" alt="Capture du bureau" width="396" data-align="inline"><img title="" src="file:///SRC/Screenshot%202025-11-07%20at%2014.00.39.png" alt="Capture du bureau" width="223" data-align="inline">
 
 - maintenant, je pouvais modifier la couleur des pixels au passage de la souris, mais l’effet restait trop lisse, trop loin de l’idée de destruction que je cherchais. J’ai donc modifié le code pour que chaque geste récupère les couleurs déjà présentes autour du pixel, les déplace et les altère. Ce glissement de matière numérique crée une impression d’explosion ou de désintégration : les dossiers et éléments visuels semblent se fragmenter au contact du curseur, comme si leur surface se délitait en temps réel.
   
-  ![Capture du bureau](/Users/aleyna/Desktop/Nouvelles%20Narrations%20Numériques%20-%202025-2026/Screenshot%202025-11-04%20at%2017.02.14.png)
+  ![Capture du bureau](/SRC/Screenshot%202025-11-04%20at%2017.02.14.png)
 
 **📆 Jour 3 – 07/11/25**
 
