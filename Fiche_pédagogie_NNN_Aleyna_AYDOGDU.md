@@ -134,7 +134,7 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 
 - J’ai aussi expérimenté un code où chaque clic modifiait les pixels un par un, transformant précisément l’image au lieu de tracer une ligne continue.
   
-  <img title="" src="SRC/Screenshot%202025-11-07%20at%2014.00.52.png" alt="Capture du bureau" height= "350" width="610" data-align="inline"><img title="" src="SRC/Screenshot%202025-11-07%20at%2014.00.39.png" alt="Capture du bureau" height= "350" width="366" data-align="inline">
+  <img title="" src="SRC/Screenshot%202025-11-07%20at%2014.00.52.png" alt="Capture du bureau" height= "370" width="610" data-align="inline"><img title="" src="SRC/Screenshot%202025-11-07%20at%2014.00.39.png" alt="Capture du bureau" height= "350" width="366" data-align="inline">
 
 - maintenant, je pouvais modifier la couleur des pixels au passage de la souris, mais l’effet restait trop lisse, trop loin de l’idée de destruction que je cherchais. J’ai donc modifié le code pour que chaque geste récupère les couleurs déjà présentes autour du pixel, les déplace et les altère. Ce glissement de matière numérique crée une impression d’explosion ou de désintégration : les dossiers et éléments visuels semblent se fragmenter au contact du curseur, comme si leur surface se délitait en temps réel.
   
