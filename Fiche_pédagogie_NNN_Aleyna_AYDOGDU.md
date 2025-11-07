@@ -47,13 +47,9 @@ L’objectif n’est pas de piéger ou de nuire, mais de créer une **tension é
 *“MERDE est-ce que je viens vraiment de tout effacer ??”*  
 Ce moment de panique où l'on se rend compte des concéquences des traces que l'on peux laisser quelque part.
 
-
-
 ### Description du dispositif
 
 *(intention + déroulé)*
-
-
 
 #### **Intention scénique**
 
@@ -63,8 +59,6 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 - En parallèle, des **dossiers fictifs mais réels** (non visibles depuis le bureau principal) sont préparés dans un dossier système du projet : ce sont eux qui seront réellement déplacés/supprimés.
 - L’expérience repose sur le **doute** : le visiteur croit qu’il détruit des fichiers importants, alors qu’il ne touche qu’à une simulation contrôlée.
 - Objectif : **rendre perceptible la trace irréversible** et la responsabilité liée à un simple geste.
-
-
 
 #### **Déroulé pour le public**
 
@@ -106,18 +100,20 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 - **Traçabilité** : enregistrement horodaté de chaque action (logs), + sauvegarde initiale pour retour arrière si besoin.
 - **Débriefing** : possibilité d’échange post-performance avec le visiteur pour expliquer les choix, les illusions et les enjeux liés à la trace numérique.
 
-
-
 ### Expérimentations réalisées
 
 **📆 Jour 1 – 03/11/25**
 
 - 9h début de cours et explication du projet
-- 10h – 17h (pause 12h-13h)
-- Travail sur : idée globale, définition de traces, lecture dossier cours, début du code P5.js et tentative d'être un peu plus à l'aise avec.
-- Résultats : image de fond + déplacement souris qui dessin les pixels en rouge
-- Difficultés : comprendre `loadPixels()` / `updatePixels()` / pixel array et SURTOUT reprendre le code sur P5.js alors que je l'utilise jamais et je n'ai pas touché au codages depuis des mois
 
+- 10h – 17h (pause 12h-13h)
+
+- Travail sur : idée globale, définition de traces, lecture dossier cours, début du code P5.js et tentative d'être un peu plus à l'aise avec.
+
+- Résultats : image de fond + déplacement souris qui dessin les pixels en rouge
+
+- Difficultés : comprendre `loadPixels()` / `updatePixels()` / pixel array et SURTOUT reprendre le code sur P5.js alors que je l'utilise jamais et je n'ai pas touché au codages depuis des mois
+  
   ![Capture du bureau](/SRC/Screenshot1.png)
 
 **📆 Jour 2 – 04/11/25**
@@ -148,21 +144,23 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 
 ### Code actuel (version 07/11)
 
-`let img;  
+```javascript
+let img;  
 function preload() 
 {  
-// garantit que l'image est chargée avant setup/draw   
+// garantit que l'image est chargée avant setup/draw  
 img = loadImage("FondEcran_NNN.png"); 
 }  
-function setup() {  createCanvas(800, 800); }  function draw() {  // on modifie avant d'afficher l'image (évite un décalage d'une frame)       modifyPixelsArea();         // on modifie quand on clique    image(img, 0, 0);            // on affiche l'image ensuite }  //function modifyPixelsUnderMouse(){ function modifyPixelsArea() {  let mouseSize = 30; // taille du carré autour de la souris   let sampleRadius = 4; // rayon d'échantillonnage autour du pixel (couleurs proches)    //  ne rien faire si la souris n'est pas au-dessus de l'image   if (mouseX < 0 || mouseY < 0 || mouseX >= img.width || mouseY >= img.height) return;   img.loadPixels();       // let positionX = mouseX + (x - 1);      // let positionY = mouseY + (y - 1);      // img.set(positionX, positionY, [100,0,0, 255]);    for (let y = 0; y < mouseSize; y++){    for (let x = 0; x < mouseSize; x++){      // on centre autour de la souris + floor pour éviter les positions flottantes       let positionX = Math.floor(mouseX + (x - mouseSize / 2));      let positionY = Math.floor(mouseY + (y - mouseSize / 2));      // Vérifie les bords       if (positionX >= 0 && positionX < img.width && positionY >= 0 && positionY < img.height) {        // --- NOUVEAU : on prend la couleur d'un pixel voisin (proche) ---         let sampleX = Math.floor(positionX + random(-sampleRadius, sampleRadius + 1));        let sampleY = Math.floor(positionY + random(-sampleRadius, sampleRadius + 1));        // on garde l'échantillon dans l'image         sampleX = constrain(sampleX, 0, img.width - 1);         sampleY = constrain(sampleY, 0, img.height - 1);        let neighborColor = img.get(sampleX, sampleY);        // on colle cette couleur au pixel courant         img.set(positionX, positionY, neighborColor);       }     }   }   img.updatePixels(); }`
+function setup() { createCanvas(800, 800); } function draw() { // on modifie avant d'afficher l'image (évite un décalage d'une frame) modifyPixelsArea(); // on modifie quand on clique image(img, 0, 0); // on affiche l'image ensuite } //function modifyPixelsUnderMouse(){ function modifyPixelsArea() { let mouseSize = 30; // taille du carré autour de la souris let sampleRadius = 4; // rayon d'échantillonnage autour du pixel (couleurs proches) // ne rien faire si la souris n'est pas au-dessus de l'image if (mouseX < 0 || mouseY < 0 || mouseX >= img.width || mouseY >= img.height) return; img.loadPixels(); // let positionX = mouseX + (x - 1); // let positionY = mouseY + (y - 1); // img.set(positionX, positionY, [100,0,0, 255]); for (let y = 0; y < mouseSize; y++){ for (let x = 0; x < mouseSize; x++){ // on centre autour de la souris + floor pour éviter les positions flottantes let positionX = Math.floor(mouseX + (x - mouseSize / 2)); let positionY = Math.floor(mouseY + (y - mouseSize / 2)); // Vérifie les bords if (positionX >= 0 && positionX < img.width && positionY >= 0 && positionY < img.height) { // --- NOUVEAU : on prend la couleur d'un pixel voisin (proche) --- let sampleX = Math.floor(positionX + random(-sampleRadius, sampleRadius + 1)); let sampleY = Math.floor(positionY + random(-sampleRadius, sampleRadius + 1)); // on garde l'échantillon dans l'image sampleX = constrain(sampleX, 0, img.width - 1); sampleY = constrain(sampleY, 0, img.height - 1); let neighborColor = img.get(sampleX, sampleY); // on colle cette couleur au pixel courant img.set(positionX, positionY, neighborColor); } } } img.updatePixels(); }
+```
 
 ### Prochaines étapes techniques
 
 ### 📋 To-Do
 
 - [ ] Empêcher toute modification tant que la souris n’a pas bougé au moins une frame  
-- [ ] Ajouter une densité aléatoire de « micro-trous » autour de la souris pour renforcer l’effet déchirure  
-- [ ] Option “empreinte figée” : sauvegarder un snapshot du canvas à intervalles réguliers pour créer des couches d’archives  
+- [x] Ajouter une densité aléatoire de « micro-trous » autour de la souris pour renforcer l’effet déchirure  
+- [x] Option “empreinte figée” : sauvegarder un snapshot du canvas à intervalles réguliers pour créer des couches d’archives  
 - [ ] Ajouter un délai entre chaque modification pour rendre la temporalité lisible  
 - [ ] Créer des boutons UI simples : Reset, Figer, Export PNG  
 - [ ] Faire des captures d’écran + courts GIF pour documenter les expériences  
