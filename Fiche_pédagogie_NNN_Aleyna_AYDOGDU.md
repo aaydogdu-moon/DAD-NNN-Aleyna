@@ -118,7 +118,7 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 - Résultats : image de fond + déplacement souris qui dessin les pixels en rouge
 - Difficultés : comprendre `loadPixels()` / `updatePixels()` / pixel array et SURTOUT reprendre le code sur P5.js alors que je l'utilise jamais et je n'ai pas touché au codages depuis des mois
 
-  ![Capture du bureau](/SRC/Nouvelles%20Narrations%20Numériques%20-%202025-2026/Screenshot1.png)
+  ![Capture du bureau](/SRC/Screenshot1.png)
 
 **📆 Jour 2 – 04/11/25**
 
@@ -126,7 +126,7 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 
 - Ajout : modification aléatoire autour de la souris, faux "prank" où l'on pense pouvoir effacer les "traces" mais enfaite non.
   
-  ![Capture du bureau](/Users/aleyna/Desktop/Nouvelles%20Narrations%20Numériques%20-%202025-2026/Screenshot%202025-11-07%20at%2011.29.38.png)
+  ![Capture du bureau](Screenshot%202025-11-07%20at%2011.29.38.png)
 
 - Discussion autour de “empreinte irréversible” / “digital scar”
 
