@@ -49,7 +49,6 @@ Ce moment de panique où l'on se rend compte des concéquences des traces que l'
 
 ### Description du dispositif
 
-*(intention + déroulé)*
 
 #### **Intention scénique**
 
